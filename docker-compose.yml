@@ -1,0 +1,12 @@
+services:
+  wso2am:
+    build:
+      context: .
+      dockerfile: Dockerfile  # Specify your Dockerfile if it's named differently
+    image: custom-wso2am:latest
+    container_name: custom-wso2am-container
+    ports:
+      - "9443:9443"
+      - "8243:8243"
+    volumes:
+      - ./deployment.toml:/home/wso2carbon/wso2am-4.3.0/repository/conf/deployment.toml
